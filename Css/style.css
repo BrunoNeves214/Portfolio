@@ -1,0 +1,461 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mohave", sans-serif;
+  transition: all 0.2s;
+}
+* h1, * a {
+  font-family: "Bebas Neue", cursive;
+}
+* h1 {
+  font-size: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/*HEADER*/
+header {
+  z-index: 10;
+  position: fixed;
+  width: 100vw;
+  height: 80px;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px 0px 20px;
+  background-color: rgba(230, 229, 229, 0.9);
+}
+header .logo {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 10px;
+  text-decoration: none;
+}
+header .logo p {
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #000000;
+}
+header .logo p span {
+  color: #1d66d4;
+}
+header .logo svg {
+  width: 25px;
+  height: 25px;
+  color: #1d66d4;
+  position: relative;
+  top: 5px;
+}
+header .navBar .hambs {
+  cursor: pointer;
+  margin-top: -10px;
+}
+header .navBar .hambs .bar {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #9F9E9E;
+  margin: 5px;
+  transition: 0.3s;
+}
+header .navBar .hambs.active .bar:nth-child(2) {
+  opacity: 0;
+}
+header .navBar .hambs.active .bar:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+header .navBar .hambs.active .bar:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+header .navBar .navItens {
+  position: absolute;
+  top: -10000%;
+  left: 5%;
+  transition: 0.3s;
+  background-color: rgba(230, 229, 229, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+header .navBar .navItens.active {
+  top: 80px;
+  left: 0px;
+}
+header .navBar .navItens li {
+  margin-top: 60px;
+  list-style: none;
+  width: 230px;
+  background-color: #E6E5E5;
+  padding: 15px;
+  border-radius: 35px;
+  box-shadow: 5px 5px 10px #9F9E9E;
+  text-align: center;
+}
+header .navBar .navItens li .navLink {
+  text-decoration: none;
+  color: #000000;
+  font-size: 50px;
+}
+
+/*SHOWCASE*/
+.showcase {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 300px 0px;
+  gap: 30px;
+  position: relative;
+}
+.showcase .name {
+  font-size: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.showcase .name span {
+  color: #1d66d4;
+}
+.showcase .about {
+  font-size: 20px;
+  text-align: center;
+}
+
+.showcaseAnim {
+  position: absolute;
+  top: 200px;
+  width: 100%;
+}
+.showcaseAnim .leftAnimation {
+  background-color: rgba(29, 102, 212, 0.5);
+  width: 50%;
+  height: 500px;
+  border-top-right-radius: 200px;
+  border-bottom-right-radius: 500px;
+  -webkit-animation: leftShake 6s ease-in-out infinite;
+          animation: leftShake 6s ease-in-out infinite;
+}
+.showcaseAnim .rightAnimation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(230, 229, 229, 0.9);
+  width: 50%;
+  height: 500px;
+  border-top-left-radius: 500px;
+  border-bottom-left-radius: 200px;
+  -webkit-animation: rightShake 6s ease-in-out infinite;
+          animation: rightShake 6s ease-in-out infinite;
+}
+
+@-webkit-keyframes leftShake {
+  0% {
+    transform: translateY(-35px);
+  }
+  25% {
+    transform: translateX(-35px);
+  }
+  35% {
+    transform: translateY(35px);
+  }
+  75% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateY(-35px);
+  }
+}
+
+@keyframes leftShake {
+  0% {
+    transform: translateY(-35px);
+  }
+  25% {
+    transform: translateX(-35px);
+  }
+  35% {
+    transform: translateY(35px);
+  }
+  75% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateY(-35px);
+  }
+}
+@-webkit-keyframes rightShake {
+  0% {
+    transform: translateY(35px);
+  }
+  25% {
+    transform: translateX(35px);
+  }
+  35% {
+    transform: translateY(-35px);
+  }
+  75% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateY(35px);
+  }
+}
+@keyframes rightShake {
+  0% {
+    transform: translateY(35px);
+  }
+  25% {
+    transform: translateX(35px);
+  }
+  35% {
+    transform: translateY(-35px);
+  }
+  75% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateY(35px);
+  }
+}
+/*PROJECTS BTN*/
+.projectBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 70px;
+}
+.projectBtn a {
+  text-decoration: none;
+  color: #000000;
+}
+.projectBtn a .outline {
+  background: linear-gradient(#fff4f4, #9F9E9E);
+  border-radius: 70px;
+  padding: 20px 15px 5px 15px;
+  box-shadow: inset 0px 5px 5px #9F9E9E;
+}
+.projectBtn a .outline:hover {
+  padding: 20px 25px 5px 25px;
+}
+.projectBtn a .outline p {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: #E6E5E5;
+  padding: 25px;
+  border-radius: 50px;
+  box-shadow: 0px 10px 10px #9F9E9E;
+}
+.projectBtn a .outline p:hover {
+  box-shadow: 0px 10px 10px #1d66d4;
+  padding: 25px 30px;
+}
+
+/*SKILLS*/
+.skillContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.skillContainer .skillGroup {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr;
+}
+.skillContainer .skillGroup .skillBoxes {
+  background-color: #E6E5E5;
+  box-shadow: 0px 5px 10px #9F9E9E;
+  padding: 30px 40px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 30px;
+  border-radius: 20px;
+  transform: translate(400%);
+  visibility: hidden;
+  transition: transform 0.7s ease;
+}
+.skillContainer .skillGroup .skillBoxes:hover {
+  color: #1d66d4;
+  font-weight: bold;
+  box-shadow: 0px 5px 10px #1d66d4;
+}
+.skillContainer .skillGroup .skillBoxes:nth-of-type(even) {
+  transform: translate(-450%);
+}
+.skillContainer .skillGroup .skillBoxes.show {
+  transform: translate(10%);
+  visibility: visible;
+}
+
+/*PROJECTS LIST*/
+.projects {
+  margin-top: 100px;
+  text-align: center;
+}
+.projects .projectsBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 100px;
+}
+.projects .projectsBox img {
+  width: 450px;
+  height: 300px;
+}
+.projects .projectsBox .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.projects .projectsBox .description h2 {
+  font-size: 30px;
+  font-weight: bold;
+}
+.projects .projectsBox .description p {
+  font-size: 20px;
+  text-align: center;
+}
+.projects .projectsBox .description a {
+  background-color: #E6E5E5;
+  padding: 10px 50px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #000000;
+  box-shadow: 0px 5px 10px #9F9E9E;
+  font-size: 20px;
+}
+.projects .projectsBox .description a:hover {
+  box-shadow: 0px 5px 10px #1d66d4;
+}
+
+/*FOOTER*/
+footer {
+  margin: 100px 0px 50px 0px;
+  /*CONTACTS*/
+}
+footer .contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+footer .contacts h1 {
+  font-size: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+footer .contacts p {
+  font-size: 20px;
+  text-align: center;
+}
+footer .contacts form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: max(50%, 400px);
+}
+footer .contacts form input, footer .contacts form textarea {
+  width: 100%;
+  color: #000000;
+  padding: 10px;
+  background-color: #E6E5E5;
+  border: none;
+  box-shadow: 0px 5px 5px #9F9E9E;
+  font-size: 18px;
+  border-radius: 10px;
+}
+footer .contacts form input:focus, footer .contacts form textarea:focus {
+  box-shadow: 0px 5px 10px #1d66d4;
+  color: #1d66d4;
+}
+footer .contacts form .btnSubmit {
+  width: 150px;
+}
+footer .contacts form .btnSubmit:hover {
+  box-shadow: 0px 5px 10px #1d66d4;
+}
+footer .social {
+  margin-top: 30px;
+  display: flex;
+  gap: 35px;
+}
+footer .social a svg {
+  color: #000000;
+  width: 35px;
+  height: 35px;
+}
+
+/*DESKTOP*/
+@media (min-width: 768px) {
+  header {
+    position: relative;
+    width: auto;
+    height: auto;
+    background-color: white;
+    padding: 10px;
+  }
+  header .navBar .hambs {
+    display: none;
+  }
+  header .navBar .navItens {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    gap: 30px;
+    width: auto;
+    height: auto;
+  }
+  header .navBar .navItens li {
+    width: auto;
+    margin-top: 0px;
+    background-color: white;
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px white;
+    padding: 0px;
+  }
+  header .navBar .navItens li .navLink {
+    text-decoration: none;
+    color: #000000;
+    font-size: 30px;
+  }
+  header .navBar .navItens li .navLink:hover {
+    color: #1d66d4;
+  }
+  .skillContainer .skillGroup {
+    grid-template-columns: 1fr 1fr;
+  }
+  .projects .projectsBox {
+    flex-direction: row;
+    gap: 50px;
+  }
+  .projects .projectsBox .description {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .projects .projectsBox .description p {
+    text-align: justify;
+  }
+}/*# sourceMappingURL=style.css.map */

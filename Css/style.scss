@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+$cor60: #E6E5E5;
+$cor30: #9F9E9E;
+$cor10: #000000;
+$corAlt: #1d66d4;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mohave', sans-serif;
+    h1, a{
+        font-family: 'Bebas Neue', cursive;
+    }
+    h1{
+        font-size: 50px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    transition: all 0.2s;
+}
+body{
+    overflow-x: hidden;
+}
+
+/*HEADER*/
+header{
+    z-index: 10;
+    position: fixed;
+    width: 100vw;
+    height: 80px;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px 0px 20px;
+    background-color: rgba(230, 229, 229, 0.9);
+    .logo{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        gap: 10px;
+        text-decoration: none;
+        p{
+            font-size: 25px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #000000;
+            span{
+                color: $corAlt;
+            }
+        }
+        svg{
+            width: 25px;
+            height: 25px;
+            color: $corAlt;
+            position: relative;
+            top: 5px;
+        }
+    }
+    .navBar{
+        .hambs{
+            cursor: pointer;
+            margin-top: -10px;
+            .bar{
+                display: block;
+                width: 30px;
+                height: 3px;
+                background-color: $cor30;
+                margin: 5px;
+                transition: 0.3s;
+            }
+            &.active .bar:nth-child(2){
+                opacity: 0;
+            }
+            &.active .bar:nth-child(1){
+                transform: translateY(10px) rotate(45deg);
+            }
+            &.active .bar:nth-child(3){
+                transform: translateY(-5px) rotate(-45deg);
+            }
+        }
+        .navItens{
+            position: absolute;
+            top: -10000%;
+            left: 5%;
+            transition: 0.3s;
+            background-color: rgba(230, 229, 229, 0.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            &.active{
+                top: 80px;
+                left: 0px;
+            }
+            li{
+                margin-top: 60px;
+                list-style: none;
+                width: 230px;
+                background-color: $cor60;
+                padding: 15px;
+                border-radius: 35px;
+                box-shadow: 5px 5px 10px $cor30;
+                text-align: center;
+                .navLink{
+                    text-decoration: none;
+                    color: $cor10;
+                    font-size: 50px;
+                }
+            }
+        }
+    }
+}
+
+/*SHOWCASE*/
+.showcase{
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 300px 0px;
+    gap: 30px;
+    position: relative;
+    .name{
+        font-size: 50px;
+        text-transform: uppercase;
+        font-weight: bold;
+        span{
+            color: $corAlt;
+            
+        }
+    }
+    .about{
+        font-size: 20px;
+        text-align: center;
+    }
+}
+.showcaseAnim{
+    position: absolute;
+    top: 200px;
+    width: 100%;
+    .leftAnimation{
+        background-color: rgba(29, 102, 212, 0.5);
+        width: 50%;
+        height: 500px;
+        border-top-right-radius: 200px;
+        border-bottom-right-radius: 500px;
+        animation: leftShake 6s ease-in-out infinite;
+    }
+    .rightAnimation{
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: rgba(230, 229, 229, 0.90);
+        width: 50%;
+        height: 500px;
+        border-top-left-radius: 500px;
+        border-bottom-left-radius: 200px;
+        animation: rightShake 6s ease-in-out infinite;
+    }
+}
+
+//SHOWCASE ANIMATION
+@keyframes leftShake {
+    0%{
+        transform: translateY(-35px);
+    }
+    25%{
+        transform: translateX(-35px);
+    }
+    35%{
+        transform: translateY(35px);
+    }
+    75%{
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateY(-35px);
+    }
+}
+
+@keyframes rightShake {
+    0%{
+        transform: translateY(35px);
+    }
+    25%{
+        transform: translateX(35px);
+    }
+    35%{
+        transform: translateY(-35px);
+    }
+    75%{
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateY(35px);
+    }
+}
+
+/*PROJECTS BTN*/
+.projectBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 70px;
+    a{
+        text-decoration: none;
+        color: $cor10;
+        .outline{
+            background: linear-gradient(#fff4f4, #9F9E9E);
+            border-radius: 70px;
+            padding: 20px 15px 5px 15px;
+            box-shadow: inset 0px 5px 5px $cor30;
+            &:hover{
+                padding: 20px 25px 5px 25px;
+            }
+            p{
+                text-align: center;
+                font-size: 30px;
+                font-weight: bold;
+                background-color: $cor60;
+                padding: 25px;
+                border-radius: 50px;
+                box-shadow: 0px 10px 10px $cor30;
+                &:hover{
+                    box-shadow: 0px 10px 10px $corAlt;
+                    padding: 25px 30px;
+                }
+            }
+        }
+    }
+}
+
+/*SKILLS*/
+.skillContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    .skillGroup{
+        display: grid;
+        gap: 40px;
+        grid-template-columns: 1fr;
+        .skillBoxes{
+            background-color: $cor60;
+            box-shadow: 0px 5px 10px $cor30;
+            padding: 30px 40px;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 30px;
+            border-radius: 20px;
+            &:hover{
+                color: $corAlt;
+                font-weight: bold;
+                box-shadow: 0px 5px 10px $corAlt;
+            }
+            transform: translate(400%);
+            visibility: hidden;
+            &:nth-of-type(even){
+                transform: translate(-450%);
+            }
+            transition: transform 0.7s ease;
+            &.show{
+                transform: translate(10%);
+                visibility: visible;
+            }
+        }
+    }
+}
+
+/*PROJECTS LIST*/
+.projects{
+    margin-top: 100px;
+    text-align: center;
+    .projectsBox{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 100px;
+        img{
+            width: 450px;
+            height: 300px;
+        }
+        .description{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            h2{
+                font-size: 30px;
+                font-weight: bold;
+            }
+            p{
+                font-size: 20px;
+                text-align: center;
+            }
+            a{
+                background-color: $cor60;
+                padding: 10px 50px;
+                border-radius: 10px;
+                text-decoration: none;
+                color: $cor10;
+                box-shadow: 0px 5px 10px $cor30;
+                font-size: 20px;
+                &:hover{
+                    box-shadow: 0px 5px 10px $corAlt;
+                }
+            }
+        }
+    }
+}
+
+/*FOOTER*/
+footer{
+    margin: 100px 0px 50px 0px;
+/*CONTACTS*/
+    .contacts{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        h1{
+            font-size: 50px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        p{
+            font-size: 20px;
+            text-align: center;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: max(50%, 400px);
+            input, textarea{
+                width: 100%;
+                color: $cor10;
+                padding: 10px;
+                background-color: $cor60;
+                border: none;
+                box-shadow: 0px 5px 5px $cor30;
+                font-size: 18px;
+                border-radius: 10px;
+                &:focus{
+                    box-shadow: 0px 5px 10px $corAlt;
+                    color: #1d66d4;
+                }
+            }
+            .btnSubmit{
+                width: 150px;
+                &:hover{
+                    box-shadow: 0px 5px 10px $corAlt;
+                }
+            }
+        }
+    }
+    .social{
+        margin-top: 30px;
+        display: flex;
+        gap: 35px;
+        a svg{
+            color: $cor10;
+            width: 35px;
+            height: 35px;
+        }
+    }
+}
+
+/*DESKTOP*/
+@media (min-width: 768px) {
+    header{
+        position: relative;
+        width: auto;
+        height: auto;
+        background-color: white;
+        padding: 10px;
+        .navBar{
+            .hambs{
+                display: none;
+            }
+            .navItens{
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                background-color: white;
+                gap: 30px;
+                width: auto;
+                height: auto;
+                li{
+                    width: auto;
+                    margin-top: 0px;
+                    background-color: white;
+                    border-radius: 0px;
+                    box-shadow: 0px 0px 0px white;
+                    padding: 0px;
+                    .navLink{
+                        text-decoration: none;
+                        color: $cor10;
+                        font-size: 30px;
+                        &:hover{
+                            color: $corAlt;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .skillContainer{
+        .skillGroup{
+            grid-template-columns: 1fr 1fr;
+            
+        }
+    }
+    .projects{
+        .projectsBox{
+            flex-direction: row;
+            gap: 50px;
+            .description{
+                flex-direction: column;
+                align-items: flex-start;
+                p{
+                    text-align: justify;
+                }
+            }
+        }
+    }
+}
+
+
+
+
