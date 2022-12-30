@@ -16,10 +16,6 @@
   font-weight: bold;
 }
 
-body {
-  overflow-x: hidden;
-}
-
 /*HEADER*/
 header {
   z-index: 10;
@@ -137,6 +133,7 @@ header .navBar .navItens li .navLink {
 .showcaseAnim {
   position: absolute;
   top: 200px;
+  left: 0;
   width: 100%;
 }
 .showcaseAnim .leftAnimation {
@@ -270,9 +267,11 @@ header .navBar .navItens li .navLink {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  overflow-x: hidden;
 }
 .skillContainer .skillGroup {
+  margin-top: 20px;
+  padding: 5px;
   display: grid;
   gap: 40px;
   grid-template-columns: 1fr;
@@ -298,7 +297,7 @@ header .navBar .navItens li .navLink {
   transform: translate(-450%);
 }
 .skillContainer .skillGroup .skillBoxes.show {
-  transform: translate(10%);
+  transform: translate(0%);
   visibility: visible;
 }
 
@@ -316,7 +315,7 @@ header .navBar .navItens li .navLink {
   margin-bottom: 100px;
 }
 .projects .projectsBox img {
-  width: 450px;
+  width: 400px;
   height: 300px;
 }
 .projects .projectsBox .description {

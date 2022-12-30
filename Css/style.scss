@@ -22,10 +22,7 @@ $corAlt: #1d66d4;
         font-weight: bold;
     }
     transition: all 0.2s;
-}
-body{
-    overflow-x: hidden;
-}
+} 
 
 /*HEADER*/
 header{
@@ -146,6 +143,7 @@ header{
 .showcaseAnim{
     position: absolute;
     top: 200px;
+    left: 0;
     width: 100%;
     .leftAnimation{
         background-color: rgba(29, 102, 212, 0.5);
@@ -245,8 +243,10 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    overflow-x: hidden;
     .skillGroup{
+        margin-top: 20px;
+        padding: 5px;
         display: grid;
         gap: 40px;
         grid-template-columns: 1fr;
@@ -270,7 +270,7 @@ header{
             }
             transition: transform 0.7s ease;
             &.show{
-                transform: translate(10%);
+                transform: translate(0%);
                 visibility: visible;
             }
         }
@@ -289,7 +289,7 @@ header{
         gap: 30px;
         margin-bottom: 100px;
         img{
-            width: 450px;
+            width: 400px;
             height: 300px;
         }
         .description{
