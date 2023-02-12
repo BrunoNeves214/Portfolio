@@ -142,8 +142,7 @@ header .navBar .navItens li .navLink {
   height: 500px;
   border-top-right-radius: 200px;
   border-bottom-right-radius: 500px;
-  -webkit-animation: leftShake 6s ease-in-out infinite;
-          animation: leftShake 6s ease-in-out infinite;
+  animation: leftShake 6s ease-in-out infinite;
 }
 .showcaseAnim .rightAnimation {
   position: absolute;
@@ -154,26 +153,7 @@ header .navBar .navItens li .navLink {
   height: 500px;
   border-top-left-radius: 500px;
   border-bottom-left-radius: 200px;
-  -webkit-animation: rightShake 6s ease-in-out infinite;
-          animation: rightShake 6s ease-in-out infinite;
-}
-
-@-webkit-keyframes leftShake {
-  0% {
-    transform: translateY(-35px);
-  }
-  25% {
-    transform: translateX(-35px);
-  }
-  35% {
-    transform: translateY(35px);
-  }
-  75% {
-    transform: translateX(0px);
-  }
-  100% {
-    transform: translateY(-35px);
-  }
+  animation: rightShake 6s ease-in-out infinite;
 }
 
 @keyframes leftShake {
@@ -191,23 +171,6 @@ header .navBar .navItens li .navLink {
   }
   100% {
     transform: translateY(-35px);
-  }
-}
-@-webkit-keyframes rightShake {
-  0% {
-    transform: translateY(35px);
-  }
-  25% {
-    transform: translateX(35px);
-  }
-  35% {
-    transform: translateY(-35px);
-  }
-  75% {
-    transform: translateX(0px);
-  }
-  100% {
-    transform: translateY(35px);
   }
 }
 @keyframes rightShake {
