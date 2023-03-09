@@ -442,6 +442,12 @@ footer{
     }
 }
 
-
-
-
+@media (min-width: 992px){
+    footer{
+        .contacts{
+            form{
+                width: 750px;
+            }
+        }
+    }
+}

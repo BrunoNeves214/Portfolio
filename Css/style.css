@@ -420,4 +420,9 @@ footer .social a svg {
   .projects .projectsBox .description p {
     text-align: justify;
   }
+}
+@media (min-width: 992px) {
+  footer .contacts form {
+    width: 750px;
+  }
 }/*# sourceMappingURL=style.css.map */
