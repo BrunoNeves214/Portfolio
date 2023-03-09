@@ -336,7 +336,8 @@ footer .contacts form {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  width: max(50%, 400px);
+  width: 100%;
+  padding: 0px 5px;
 }
 footer .contacts form input, footer .contacts form textarea {
   width: 100%;

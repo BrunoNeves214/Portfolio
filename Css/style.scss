@@ -347,7 +347,8 @@ footer{
             justify-content: center;
             align-items: center;
             gap: 20px;
-            width: max(50%, 400px);
+            width: 100%;
+            padding: 0px 5px;
             input, textarea{
                 width: 100%;
                 color: $cor10;
